@@ -1,0 +1,495 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR WRAPPER */
+.gradient-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(to right, #4f46e5, transparent);
+  padding: 12px 0;
+}
+
+/* INNER CONTAINER */
+.nav-inner {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* LOGO IMAGE */
+.nav-logo {
+  height: 36px;
+  width: auto;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: 0.2s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* Optional underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* NAVBAR INDICATOR */
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #4f46e5;
+    transition: 0.3s;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('../img/hero-bg.png') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.tagline {
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.cta {
+    padding: 14px 36px;
+    background: #4f46e5;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.6rem;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+/* Layout */
+.plans-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: nowrap; /* prevents wrapping */
+}
+
+/* Force all cards to be the same width */
+.plan-card {
+  background: #111;
+  padding: 35px;
+  border-radius: 14px;
+  width: 300px; /* fixed width so all align */
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.05);
+  flex-shrink: 0; /* prevents shrinking */
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 900px) {
+  .plans-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+/* MOST POPULAR badge */
+.popular {
+  border: 2px solid #4f46e5;
+  transform: scale(1.03);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* BEST VALUE glowing badge */
+.best-value {
+  position: relative;
+  border: 2px solid #4f46e5;
+  box-shadow: 0 0 20px #4f46e5;
+}
+
+.best-value-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 
+    0 0 10px #4f46e5,
+    0 0 20px #4f46e5,
+    0 0 30px #4f46e5;
+}
+
+
+/* Description */
+.plan-desc {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* List */
+.plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.plan-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+
+.check-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+/* Price */
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.robux-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* Button */
+.plan-btn {
+  padding: 10px 20px;
+  background: #4f46e5;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .plans-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.grid-4x2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* CARDS */
+.card {
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    transition: 0.25s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: scale(1.05) rotateX(6deg) rotateY(6deg);
+}
+
+/* ICONS */
+.icon-wrap {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-wrap img {
+    width: 130px;
+    height: 130px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* GRADIENT COLORS */
+.color1 { background: linear-gradient(135deg, #2b2d42, #3a3c5c); }
+.color2 { background: linear-gradient(135deg, #3f51b5, #5c6bc0); }
+.color3 { background: linear-gradient(135deg, #009688, #26a69a); }
+.color4 { background: linear-gradient(135deg, #ff5722, #ff7043); }
+.color5 { background: linear-gradient(135deg, #673ab7, #7e57c2); }
+.color6 { background: linear-gradient(135deg, #00bcd4, #26c6da); }
+.color7 { background: linear-gradient(135deg, #e91e63, #f06292); }
+.color8 { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.contact-subtitle {
+  opacity: 0.7;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Card container */
+.contact-card {
+  background: #111;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.trust-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.trust-section h2 {
+  margin-bottom: 25px;
+}
+
+/* Slider container */
+.trust-slider {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  background: #0f0f0f;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Track that moves */
+.trust-track {
+  display: flex;
+  gap: 60px;
+  animation: slide 18s linear infinite;
+}
+
+/* Logos */
+.trust-track img {
+  height: 50px;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.trust-track img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Infinite scroll animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Two inputs side-by-side */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* Inputs */
+input, textarea {
+  padding: 16px;
+  border-radius: 10px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #4f46e5;
+  background: #222;
+}
+
+/* Textarea */
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Button */
+button {
+  padding: 16px;
+  background: #4f46e5;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #5b54ff;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.bottom-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: -20px; /* pulls it closer to footer */
+}
+
+.bottom-banner img {
+  width: 100%;
+  max-width: 2500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px; /* optional */
+  opacity: 0.95;       /* optional */
+}
+
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #0a0a0a;
+    margin-top: 40px;
+}
